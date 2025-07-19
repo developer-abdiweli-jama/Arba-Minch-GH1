@@ -1,0 +1,180 @@
+/* Hospital Management System Custom Styles */
+
+/* Global Styles */
+:root {
+    --primary-color: #2563eb; /* Blue for buttons and links */
+    --secondary-color: #10b981; /* Green for hospital theme */
+    --text-color: #1f2937; /* Dark gray for text */
+    --bg-light: #f3f4f6; /* Light gray background */
+}
+
+/* Section Title (used in login.php, logs/index.php, etc.) */
+.section-title {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Service Card (used in doctors/index.php, services page) */
+.service-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.service-card p {
+    color: #6b7280; /* Tailwind gray-500 */
+}
+
+/* Doctor Card (used in doctors/index.php) */
+.doctor-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.doctor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+}
+
+.doctor-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.doctor-card p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Custom Select (used in your login.php for role dropdown) */
+.custom-select {
+    appearance: none;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.25rem;
+    background-color: white;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Form Checkbox (used in your login.php for remember me) */
+.form-checkbox {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.form-checkbox:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+    background-size: 1rem;
+    background-position: center;
+}
+
+.form-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Table Styles (used in logs/index.php) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+table th {
+    background-color: var(--bg-light);
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .service-card,
+    .doctor-card {
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Accessibility Enhancements */
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Branding for ARBA-MINCH-GH */
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif; /* Professional font, fallback to sans-serif */
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
