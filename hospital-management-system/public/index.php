@@ -1,31 +1,59 @@
 <?php
-// Enable error reporting for development
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// routes/web.php (REWRITTEN FOR STABILITY)
 
-// Start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+use App\Controllers\AuthController;
+use App\Controllers\HomeController;
+use App\Controllers\DashboardController;
+use App\Controllers\AppointmentController;
+use App\Controllers\DoctorController;
+use App\Controllers\MedicalRecordController;
+use App\Controllers\LogsController;
+use App\Controllers\PatientController;
 
-// Generate CSRF token if not set
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
+return [
+    'GET' => [
+        '' => [HomeController::class, 'index'],
+        'home' => [HomeController::class, 'index'],
+        'about' => [HomeController::class, 'about'],
+        'services' => [HomeController::class, 'services'],
+        'doctors' => [HomeController::class, 'doctors'],
+        'contact' => [HomeController::class, 'contact'],
 
-// Load dependencies
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../routes/web.php';
+        'auth/login' => [AuthController::class, 'login'],
+        'auth/register' => [AuthController::class, 'register'],
+        'auth/logout' => [AuthController::class, 'logout'],
+        'auth/unauthorized' => [AuthController::class, 'unauthorized'],
 
-use App\Core\App;
+        'dashboard/admin' => [DashboardController::class, 'admin'],
+        'dashboard/doctor' => [DashboardController::class, 'doctor'],
+        'dashboard/patient' => [DashboardController::class, 'patient'],
 
-try {
-    $app = new App($routes);
-    $app->run();
-} catch (Exception $e) {
-    header('HTTP/1.1 500 Internal Server Error');
-    echo 'Error: ' . htmlspecialchars($e->getMessage());
-}
-?>
+        'appointments/book' => [AppointmentController::class, 'book'],
+        'appointments/manage' => [AppointmentController::class, 'manage'],
+        'appointments/history' => [AppointmentController::class, 'history'],
+        'appointments/notifications' => [AppointmentController::class, 'notifications'],
+
+        'medical_records/create/(\d+)' => [MedicalRecordController::class, 'create'],
+        'medical_records/view/(\d+)' => [MedicalRecordController::class, 'view'],
+
+        'doctors/index' => [DoctorController::class, 'index'],
+        'doctors/create' => [DoctorController::class, 'create'],
+
+        'logs/index' => [LogsController::class, 'index'],
+        'patients/create' => [PatientController::class, 'create'],
+    ],
+
+    'POST' => [
+        'auth/login' => [AuthController::class, 'login'],
+        'auth/register' => [AuthController::class, 'register'],
+
+        'appointments/book' => [AppointmentController::class, 'book'],
+        'appointments/approve/(\d+)' => [AppointmentController::class, 'approve'],
+        'appointments/reject/(\d+)' => [AppointmentController::class, 'reject'],
+
+        'contact' => [HomeController::class, 'contact'],
+        'medical_records/create' => [MedicalRecordController::class, 'create'],
+        'doctors/create' => [DoctorController::class, 'create'],
+        'patients/create' => [PatientController::class, 'create'],
+    ]
+];
