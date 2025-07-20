@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 =======
 # Arba-Minch-GH1
 
