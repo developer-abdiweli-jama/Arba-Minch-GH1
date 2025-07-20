@@ -1,0 +1,23 @@
+/* Navigation */
+.navbar {
+  background-color: white;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+}
+
+.nav-link {
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--rounded-sm);
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+  background-color: var(--bg-light);
+}

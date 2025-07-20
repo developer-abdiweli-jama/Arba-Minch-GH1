@@ -1,0 +1,23 @@
+2025-07-19 09:36:05 - error: Application error: Method not allowed
+2025-07-19 09:36:23 - error: Application error: Method not allowed
+2025-07-19 09:59:33 - error: Application error: Method not allowed
+2025-07-19 10:01:51 - error: Application error: Method not allowed
+2025-07-19 10:05:41 - error: Application error: Method not allowed
+2025-07-19 10:16:47 - error: Application error: Method not allowed
+2025-07-19 10:39:30 - error: Application error: Method not allowed
+2025-07-19 10:39:33 - error: Application error: Method not allowed
+2025-07-19 10:39:34 - error: Application error: Method not allowed
+2025-07-19 10:39:41 - error: Application error: Method not allowed
+2025-07-19 10:42:14 - error: Application error: Method not allowed
+2025-07-19 10:48:23 - error: Application error: Method not allowed
+2025-07-19 10:54:38 - error: Application error: Method not allowed
+2025-07-19 11:09:41 - error: Application error: Method not allowed
+2025-07-19 11:09:44 - error: Application error: Method not allowed
+2025-07-19 15:36:02 - error: Application error: Method not allowed
+2025-07-19 15:37:09 - error: Application error: Method not allowed
+2025-07-19 15:37:10 - error: Application error: Method not allowed
+2025-07-19 15:37:10 - error: Application error: Method not allowed
+2025-07-19 15:54:00 - error: Application error: Method not allowed
+2025-07-20 12:42:15 - error: Application error: Method not allowed
+2025-07-20 15:03:58 - error: Application error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'gender' cannot be null
+2025-07-20 15:28:54 - error: Application error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`hospital_db`.`appointments`, CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE)
