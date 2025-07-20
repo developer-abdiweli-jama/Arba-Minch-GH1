@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# Arba-Minch-GH1
+
+>>>>>>> 5f9e7b74130d9be700aa0d26a13274953a9f6db4
 Hospital Management System
 A PHP-based web application for managing hospital operations, including user authentication, role-based access, appointments, medical records, notifications, and audit logs.
 Requirements
